@@ -2,25 +2,28 @@
   "name": "Foobar",
   "topics": [{
       "icon": "user",
-      "name": "Account and Identity"
+      "name": "Account and Identity",
+      "id": "account_and_identity"
   }, {
       "icon": "wrench",
-      "name": "Wall Settings"
+      "name": "Wall Settings",
+      "id": "wall_settings"
   }, {
       "icon": "sprout",
-      "name": "Community Guidelines"
+      "name": "Community Guidelines",
+      "id": "community_guidelines"
   }],
   "indexes": [{
       "name": "About Identity",
       "description": "Identity is a unique identifier to determine who owns a message or a note.",
       "tags": ["Security", "Identity"],
-      "topic": "Account and Identity",
+      "topic": "account_and_identity",
       "slug": "about_identity"
   }, {
       "name": "About Authenticated under name",
-      "description": "",
-      "tags": ["Security", "Identity"],
-      "topic": "Account and Identity",
+      "description": "Authenticated under name is a permanent most-updated name on an authenticated message.",
+      "tags": ["Security", "Authentication"],
+      "topic": "account_and_identity",
       "slug": "about_identity"
   }]
 }
