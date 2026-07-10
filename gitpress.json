@@ -11,9 +11,9 @@
       "name": "Community Guidelines"
   }],
   "indexes": [{
-      "name": "",
-      "description": "",
-      "tags": [],
+      "name": "About Identity",
+      "description": "Identity is a unique identifier to determine who owns a message or a note.",
+      "tags": ["Security", "Identity"],
       "topic": "Account and Identity"
   }]
 }
