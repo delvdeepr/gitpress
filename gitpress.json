@@ -1,3 +1,19 @@
 {
-  "name": "Foobar"
+  "name": "Foobar",
+  "topics": [{
+      "icon": "user",
+      "name": "Account and Identity"
+  }, {
+      "icon": "wrench",
+      "name": "Wall Settings"
+  }, {
+      "icon": "sprout",
+      "name": "Community Guidelines"
+  }],
+  "indexes": [{
+      "name": "",
+      "description": "",
+      "tags": [],
+      "topic": "Account and Identity"
+  }]
 }
