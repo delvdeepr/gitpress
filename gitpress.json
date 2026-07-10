@@ -17,6 +17,10 @@
       "topic": "Account and Identity",
       "slug": "about_identity"
   }, {
-      
+      "name": "About Authenticated under name",
+      "description": "",
+      "tags": ["Security", "Identity"],
+      "topic": "Account and Identity",
+      "slug": "about_identity"
   }]
 }
