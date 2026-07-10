@@ -1,7 +1,7 @@
 {
     "name": "Foobar",
     "namespace": "foobar",
-    "as": "Help Center",
+    "as": "HELP_CENTER",
     "topics": [{
         "icon": "user",
         "name": "Account and Identity",
