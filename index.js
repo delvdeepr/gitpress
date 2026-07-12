@@ -177,8 +177,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         if(topic) Saiko.$showTopicLinks(topic.id);
     }
     
-    window.vm = vm;
-    window.core = core;
+    // DEVELOPMENT
+    // window.vm = vm;
+    // window.core = core;
 });
 
 })();
