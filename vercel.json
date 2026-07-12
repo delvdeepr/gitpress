@@ -1,7 +1,7 @@
 {
     "redirects": [{
         "source": "/:namespace/:article",
-        "destination": "/?namespace=:namespace&article=:article&topic=:topic",
+        "destination": "/?namespace=:namespace&article=:article",
         "permanent": false
     }]
 }
