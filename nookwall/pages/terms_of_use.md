@@ -13,7 +13,7 @@ By accessing or using Nookwall, you agree to these Terms. If you do not agree wi
 
 ### 1. About Nookwall
 
-Nookwall is an online freedom wall platform where users can create their own walls and receive text-based messages from both anonymous and authenticated users. Learn more at [https://nookwall.delvdeepr.me/about](About Nookwall).
+Nookwall is an online freedom wall platform where users can create their own walls and receive text-based messages from both anonymous and authenticated users. Learn more at [About Nookwal](https://nookwall.delvdeepr.me/about).
 
 ### 2. Eligibility
 
