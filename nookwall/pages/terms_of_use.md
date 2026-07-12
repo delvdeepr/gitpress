@@ -13,7 +13,7 @@ By accessing or using Nookwall, you agree to these Terms. If you do not agree wi
 
 ### 1. About Nookwall
 
-Nookwall is an online freedom wall platform where users can create their own walls and receive text-based messages from both anonymous and authenticated users. Learn more at [About Nookwal](https://nookwall.delvdeepr.me/about).
+Nookwall is an online freedom wall platform where users can create their own walls and receive text-based messages from both anonymous and authenticated users. Learn more at [About Nookwall](https://nookwall.delvdeepr.me/about).
 
 ### 2. Eligibility
 
@@ -61,7 +61,7 @@ The following are strictly prohibited:
 - Nude or sexually explicit uploads.
 - Any activity intended to disrupt the Service or other users.
 
-Additional posting expectations are described in the [/p/nookwall/guidelines_on_posting_messages](Guidelines on Posting Messages) and [/p/nookwall/guidelines_on_posting_notes](Guidelines on Posting Notes), which form part of these Terms.
+Additional posting expectations are described in the [Guidelines on Posting Messages](/p/nookwall/guidelines_on_posting_messages) and [Guidelines on Posting Notes](/p/nookwall/guidelines_on_posting_notes), which form part of these Terms.
 
 ### 6. Wall Owner Moderation
 
