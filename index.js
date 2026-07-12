@@ -96,7 +96,7 @@ Saiko.on("search", () => {
             title: item.name,
             subtitle: core.overview.topics.find(t => t.id == item.topic).name
                 + " | " + item.tags.join(", "),
-            url: `/${core.overview.namespace}/${item.slug}`
+            url: `/p/${core.overview.namespace}/${item.slug}`
          }
     }).slice(0, 5);
     vm.search_results = results;
