@@ -125,7 +125,7 @@ async function getContactBubbles() {
     }
 }
 
-$(document).ready(async () => {
+document.addEventListener("DOMContentLoaded", async () => {
     core = createCore();
     
     Saiko.attach("ui", {
