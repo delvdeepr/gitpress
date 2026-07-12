@@ -74,9 +74,11 @@ Users may report messages they believe violate these Terms or are otherwise harm
 
 Nookwall reserves the right to investigate suspected violations of these Terms.
 
+To protect users, the Service, and the community, Nookwall may remove content, restrict access to features, suspend walls or accounts, or terminate access where we reasonably believe such action is necessary, including in cases where conduct is harmful, abusive, deceptive, disruptive, or otherwise inconsistent with the purpose of the Service, even if the conduct is not expressly listed in these Terms.
+
 If we determine that a user has engaged in serious misconduct—including but not limited to identity theft, malicious exploitation, fraud, illegal activity, or repeated violations—we may immediately terminate the user's account or access to the Service without prior notice.
 
-Users whose accounts are terminated may submit one appeal. Submission of an appeal does not guarantee reinstatement.
+Users whose accounts are terminated may submit one appeal. Submission of an appeal does not guarantee reinstatement, and Nookwall's decision on the appeal will be final.
 
 ### 8. Premium Features
 
