@@ -1,8 +1,9 @@
 (() => {
 let core = {};
-let payloads = {};
-let instance, idx, fingerprint;
-const has_payload = location.search.length > 1;
+let instance, idx;
+
+const payloads = Object.fromEntries(new URLSearchParams(location.search));
+const fingerprint = new ClientJS().getFingerprint().toString(36).toUpperCase();;
 
 async function read(file) {
     // Bypass caching to get the most updated content.
@@ -104,13 +105,6 @@ async function fetchPage(slug) {
 
 async function hotstart() {
     idx = await Indexed.open("gitpress-v1");
-    payloads = await idx.get("payloads", {});
-    fingerprint = new ClientJS().getFingerprint().toString(36).toUpperCase();
-    
-    if(has_payload) {
-        await idx.set("payloads", Object.fromEntries(new URLSearchParams(location.search)));
-        return location.href = location.origin + location.pathname;
-    }
     
     core.idx = idx;
     core.payloads = payloads;
@@ -130,8 +124,6 @@ async function hotstart() {
             core.topic = core.overview.topics.find(t => t.id == article.topic);
         }
     }
-    
-    await idx.delete("payloads");
 }
 
 window.createCore = () => {
