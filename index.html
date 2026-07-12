@@ -184,6 +184,10 @@
         <div class="navbar-offset"
             v-if="ui.screen > 0 && namespace"></div>
         
+        <section class="text-center my-5"
+            v-if="ui.screen == -1">
+            <p class="title">404 Not Found</p>
+        </section>
         <section class="d-flex justify-content-center"
             v-if="ui.screen == 0">
             <div class="spinner spinner-border my-5"></div>
