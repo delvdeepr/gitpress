@@ -12,13 +12,21 @@ const NAMESPACES = [{
         "url": "https://nookwall.delvdeepr.me"
     }, {
         "name": "Terms of Use",
-        "url": "/nookwall/terms"
+        "url": "/p/nookwall/terms"
     }, {
         "name": "Privacy Policy",
-        "url": "/nookwall/privacy"
+        "url": "/p/nookwall/privacy"
     }, {
         "name": "Community Guidelines",
-        "url": "/nookwall?topic=community_guidelines"
+        "url": "/p/nookwall?topic=community_guidelines"
+    }]
+}, {
+    "icon": "rocket",
+    "name": "Foobar",
+    "namespace": "foobar",
+    "links": [{
+        "name": "Example",
+        "url": "https://example.com"
     }]
 }];
 
