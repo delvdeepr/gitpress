@@ -5,8 +5,8 @@ Topic: legals
 Updated At: July 13, 2026
 -----
 
+You can check the updates above to get notified when these Terms changes. <br>
 Effective Date: July 13, 2026
-You can check the updates above to get notified when these Terms changes.
 
 Welcome to Nookwall ("Nookwall," "we," "our," or "us"). These Terms of Use ("Terms") govern your access to and use of the Nookwall website and services.
 By accessing or using Nookwall, you agree to these Terms. If you do not agree with these Terms, you must stop using the Service.
