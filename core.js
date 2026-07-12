@@ -9,7 +9,7 @@ const fingerprint = new ClientJS().getFingerprint().toString(36).toUpperCase();
 async function read(file) {
     // Bypass caching to get the most updated content.
     const burst = "t=" + Date.now();
-    const branch = payloads.namespace;
+    const branch = pathnames[1];
     if(!branch) throw new Error("Namespace is not provided");
     
     const file_key = file?.split("/").pop().split(".").shift();
