@@ -1,6 +1,6 @@
 {
     "redirects": [{
-        "source": "/p/:namespace/",
+        "source": "/p/:namespace",
         "destination": "/?namespace=:namespace",
         "permanent": false
     }, {
