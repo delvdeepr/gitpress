@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         vm.ui.screen = -1;
     }
     
-    const [p, namespace, article] = pathnames;
+    const [p, namespace, article] = core.pathnames;
     if(p == "p") {
         if(namespace
             && !article
