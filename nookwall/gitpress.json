@@ -38,13 +38,13 @@
         "description": "By using Nookwall, you agree to our Terms of Use.",
         "tags": ["Legals"],
         "topic": "legals",
-        "slug": "terms"
+        "slug": "terms_of_use"
     }, {
         "name": "Privacy Policy",
         "description": "By using Nookwall, you agree to our Privacy Policy.",
         "tags": ["Legals"],
         "topic": "legals",
-        "slug": "terms"
+        "slug": "privacy_policy"
     }, {
         "name": "Guidelines on Managing Wall",
         "description": "Managing a wall requires proper responsibility and accountability.",
