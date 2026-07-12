@@ -12,7 +12,7 @@ By accessing or using Nookwall, you agree to these Terms. If you do not agree wi
 
 ### 1. About Nookwall
 
-Nookwall is an online freedom wall platform where users can create their own walls and receive text-based messages from both anonymous and authenticated users. Users may also create text-based sticky notes. Wall owners may customize their walls, including uploading a wall image, while registered users may upload a profile picture.
+Nookwall is an online freedom wall platform where users can create their own walls and receive text-based messages from both anonymous and authenticated users. Learn more at [https://nookwall.delvdeepr.me/about](About Nookwall).
 
 ### 2. Eligibility
 
@@ -50,17 +50,17 @@ Users are expected to use Nookwall respectfully and lawfully.
 
 The following are strictly prohibited:
 
-- Spam or excessive unsolicited content.
-- Attempts to exploit vulnerabilities, including cross-site scripting (XSS) or other malicious attacks.
-- Fraud, scams, or deceptive advertisements.
 - Identity theft or impersonation.
+- Spam or excessive unsolicited content.
+- Attempts to exploit vulnerabilities.
+- Fraud, scams, or deceptive advertisements.
 - Illegal content.
 - Harassment, bullying, or hate speech.
 - Content intended to threaten or harm others.
-- Uploading nude or sexually explicit profile or wall images.
+- Nude or sexually explicit uploads.
 - Any activity intended to disrupt the Service or other users.
 
-Additional posting expectations are described in the Guidelines on Posting Messages and Guidelines on Posting Notes, which form part of these Terms.
+Additional posting expectations are described in the [/p/nookwall/guidelines_on_posting_messages](Guidelines on Posting Messages) and [/p/nookwall/guidelines_on_posting_notes](Guidelines on Posting Notes), which form part of these Terms.
 
 ### 6. Wall Owner Moderation
 
@@ -69,6 +69,8 @@ Each wall owner is responsible for moderating their own wall.
 Wall owners may remove messages posted on their wall if they believe the content is inappropriate, offensive, disruptive, violates these Terms, or is otherwise unsuitable for their community, even if the content does not explicitly fall under a prohibited category listed in these Terms.
 
 Users may report messages they believe violate these Terms or are otherwise harmful. Reports notify the wall owner, who may review the content and, where appropriate, remove the content or ban the responsible user from interacting with that wall.
+
+Any walls that violates these terms will be terminated by us.
 
 ### 7. Enforcement
 
