@@ -181,9 +181,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         && !core.payloads.article
         && !core.payloads.topic
         && core.payloads.q) {
-            vm.fields.search = core.payloads.q;
-            Saiko.$search();
-        }
+        vm.fields.search = core.payloads.q;
+        Saiko.$search();
+    }
     
     // DEVELOPMENT
     // window.vm = vm;
