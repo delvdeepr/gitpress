@@ -1,16 +1,6 @@
 {
     "redirects": [{
-        "source": "/vendor/:path*",
-        "destination": "/vendor/:path*",
-        "permanent": false
-    },
-    {
-        "source": "/fonts/:path*",
-        "destination": "/fonts/:path*",
-        "permanent": false
-    },
-    {
-        "source": "/:namespace/:article",
+        "source": "/p/:namespace/:article",
         "destination": "/?namespace=:namespace&article=:article",
         "permanent": false
     }]
