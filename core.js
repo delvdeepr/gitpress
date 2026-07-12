@@ -3,6 +3,7 @@ let core = {};
 let instance, idx;
 
 const payloads = Object.fromEntries(new URLSearchParams(location.search));
+const pathnames = location.pathname.split("/").filter(p => p.length > 0);
 const fingerprint = new ClientJS().getFingerprint().toString(36).toUpperCase();
 
 async function read(file) {
@@ -108,17 +109,19 @@ async function hotstart() {
     
     core.idx = idx;
     core.payloads = payloads;
+    core.pathnames = pathnames;
     
     // DEVELOPMENT
     // payloads.namespace = "foobar";
     // payloads.article = "test3";
     // payloads.topic = "account_and_identity";
     
-    if(payloads.namespace) {
+    const [p, namespace, article] = pathnames;
+    if(p == "p" && namespace) {
         const overview = await read();
         core.overview = JSON.parse(overview);
-        if(payloads.article) {
-            const article = await fetchPage(payloads.article);
+        if(article) {
+            const article = await fetchPage(article);
             article.tags = article.tags.split(",").map(t => t.trim()) ?? [];
             core.article = article;
             core.topic = core.overview.topics.find(t => t.id == article.topic);
