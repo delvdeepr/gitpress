@@ -141,4 +141,4 @@ These Terms shall be governed by and interpreted in accordance with the laws of 
 
 ### 17. Contact
 
-If you have questions regarding these Terms, you may contact us through the Contact Support Chatbox.
+If you have questions regarding these Terms, you may contact us through the Contact Support Chatbox above.
