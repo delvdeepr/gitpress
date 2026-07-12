@@ -39,11 +39,11 @@ Saiko.on("hideResults", () => {
 });
 
 Saiko.on("createLink", (...path) => {
-    return "/" + path.join("/");
+    return "/p/" + path.join("/");
 });
 
 Saiko.on("createSearchLink", (query) => {
-    return "/" + vm.namespace + "?q=" + encodeURIComponent(query); 
+    return "/p/" + vm.namespace + "?q=" + encodeURIComponent(query); 
 });
 
 Saiko.on("sendContactMessage", async () => {
@@ -85,7 +85,7 @@ Saiko.on("formatDate", (timestamp) => {
     }).format(timestamp);
 });
 
-Saiko.on("search", (evt) => {
+Saiko.on("search", () => {
     const query = vm.fields.search.trim();
     vm.search_results = [];
     vm.ui.no_result = false;
@@ -176,6 +176,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         const topic = core.overview.topics.find(t => t.id == core.payloads.topic);
         if(topic) Saiko.$showTopicLinks(topic.id);
     }
+    
+    if(core.payloads.namespace
+        && !core.payloads.article
+        && !core.payloads.topic
+        && core.payloads.q) {
+            vm.fields.search = core.payloads.q;
+            Saiko.$search();
+        }
     
     // DEVELOPMENT
     // window.vm = vm;
