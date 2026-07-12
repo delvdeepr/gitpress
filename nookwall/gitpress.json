@@ -1,1 +1,67 @@
-{}
+{
+    "name": "Nookwall",
+    "namespace": "nookwall",
+    "type": "HELP_CENTER",
+    
+    "topics": [{
+        "icon": "user",
+        "name": "Account and Identity",
+        "id": "account_and_identity"
+    }, {
+        "icon": "wrench",
+        "name": "Wall Settings",
+        "id": "wall_settings"
+    }, {
+        "icon": "sprout",
+        "name": "Community Guidelines",
+        "id": "community_guidelines"
+    }, {
+        "icon": "scale",
+        "name": "Legals",
+        "id": "legals"
+    }],
+    
+    "indexes": [{
+        "name": "About Identity",
+        "description": "Identity is a unique identifier to determine who owns a message or a note.",
+        "tags": ["Security", "Identity"],
+        "topic": "account_and_identity",
+        "slug": "about_identity"
+    }, {
+        "name": "About Authenticated under name",
+        "description": "Authenticated under name is a permanent most-updated name on an authenticated message.",
+        "tags": ["Security", "Authentication"],
+        "topic": "account_and_identity",
+        "slug": "about_identity"
+    }, {
+        "name": "Terms of Use",
+        "description": "By using Nookwall, you agree to our Terms of Use.",
+        "tags": ["Legals"],
+        "topic": "legals",
+        "slug": "terms"
+    }, {
+        "name": "Privacy Policy",
+        "description": "By using Nookwall, you agree to our Privacy Policy.",
+        "tags": ["Legals"],
+        "topic": "legals",
+        "slug": "terms"
+    }, {
+        "name": "Guidelines on Managing Wall",
+        "description": "Managing a wall requires proper responsibility and accountability.",
+        "tags": ["Guidelines"],
+        "topic": "community_guidelines",
+        "slug": "guidelines_on_managing_walls"
+    }, {
+        "name": "Guidelines on Posting Messaging",
+        "description": "Posting messages requires proper responsibility and accountability.",
+        "tags": ["Guidelines"],
+        "topic": "community_guidelines",
+        "slug": "guidelines_on_posting_messaging"
+    }, {
+        "name": "Guidelines on Posting Notes",
+        "description": "Posting notes requires proper responsibility and accountability.",
+        "tags": ["Guidelines"],
+        "topic": "community_guidelines",
+        "slug": "guidelines_on_posting_notes"
+    }]
+}
