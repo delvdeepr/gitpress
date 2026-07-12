@@ -19,7 +19,7 @@ async function read(file) {
     const { cache, exp } = caches[key] ?? {};
     if(cache && exp > Date.now()) return cache;
     
-    const req = await fetch(`https://cdn.jsdelivr.net/gh/${USER}/${REPO}@${branch}/${file || DEF_FILE}?${burst}`);
+    const req = await fetch(`https://cdn.jsdelivr.net/gh/${USER}/${REPO}@${branch}/${branch}/${file || DEF_FILE}?${burst}`);
     const d = await req.text();
     
     if(req.status == 200) {
