@@ -116,9 +116,9 @@ async function hotstart() {
     core.payloads = payloads;
     
     // DEVELOPMENT
-    payloads.namespace = "foobar";
+    // payloads.namespace = "foobar";
     // payloads.article = "test3";
-    payloads.topic = "account_and_identity";
+    // payloads.topic = "account_and_identity";
     
     if(payloads.namespace) {
          try {
