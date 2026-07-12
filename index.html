@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Press</title>
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/LucideIcons.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<Navbar model props="overview, namespace"
+    class="navbar shadow-sm">
+    <a :href="createLink(namespace)"
+        class="navbar-title flex flex-grow-1">
+        <i class="icon text-secondary" :class="('icon-' + constants.NAMESPACE_TYPES[overview.type].icon)"
+            v-if="overview.type"></i>
+        {{ overview.name }}
+        {{ constants.NAMESPACE_TYPES[overview.type]?.suffix }}
+    </a>
+    <button class="navbar-btn d-none d-md-flex"
+        @click="setPopup(true)">
+        <p>Contact Support</p>
+        <i class="icon icon-headset"></i>
+    </button>
+    <i class="icon icon-headset navbar-btn d-md-none"
+        @click="setPopup(true)"></i>
+</Navbar>
+
+<ArticleLayout model props="article, topic"
+    class="layout">
+    <section class="layout-content">
+        <div class="article-topic">
+            <i class="icon icon-newspaper"></i>
+            <button @click="showTopicLinks(topic.id)">{{ topic.name }}</button>
+        </div>
+        <p class="title my-2">{{ article.name }}</p>
+        <p class="description">{{ article.description }}</p>
+        <hr><br>
+        
+        <div class="article-body"
+            v-html="article.content"></div>
+        <div class="tags">
+            <a class="tag"
+                v-for="tag in article.tags"
+                :href="createSearchLink(tag)">{{ tag }}</a>
+        </div><br>
+        <p class="m-0 text-secondary">Last updated at {{ article.updated_at }}</p>
+    </section>
+</ArticleLayout>
+
+<PageLayout model props="topic, namespace, overview, results"
+    class="layout">
+    <section class="layout-content"
+        v-if="ui.subscreen == 0">
+        <p class="title mb-2">How can we help you?</p>
+        <div class="search mb-1">
+            <i class="icon icon-search"
+                @click="search"></i>
+            <input type="text" placeholder="Search press articles..."
+                v-model="fields.search"
+                @keyup.enter="search"
+                @blur="hideResults">
+        </div>
+        <SearchResults :ui
+            :results
+            v-if="results.length > 0 || ui.no_result"></SearchResults>
+        <br><br>
+        
+        <p class="subtitle mb-4">Press Topics</p>
+        <div class="topics">
+            <div class="topic shadow-sm"
+                v-for="topic in overview.topics"
+                @click="showTopicLinks(topic.id)">
+                <i class="icon" :class="('icon-' + topic.icon)"></i>
+                <p>{{ topic.name }}</p>
+            </div>
+        </div>
+    </section>
+    <section class="layout-content px-3"
+        v-if="ui.subscreen == 1">
+        <p class="title flex mb-4">
+            <i class="icon icon-chevron-left"
+                @click="showLayout(1, 0)"></i>
+            {{ topic.name }}
+        </p>
+        <ul class="topic-links">
+            <li class="link gap-2"
+                v-for="link in topic.links">
+                <a :href="createLink(namespace, link.slug)">{{ link.name }}</a>
+                <i class="icon icon-external-link"></i>
+            </li>
+        </ul>
+    </section>
+</PageLayout>
+
+<DefaultLayout model
+    class="layout">
+    <section class="layout-content">
+        <p class="subtitle mb-4">Available Press</p>
+        <div class="topics">
+            <a class="topic shadow-sm"
+                v-for="ns in constants.NAMESPACES"
+                :href="createLink(ns.namespace)q">
+                <i class="icon" :class="('icon-' + ns.icon)"></i>
+                <p>{{ ns.name }}</p>
+            </a>
+        </div>
+    </section>
+    <br><br>
+    <p class="text-center text-secondary">&copy; delv 2026. All rights reserved.</p>
+</DefaultLayout>
+
+<ContactPopup model props="messages, contact"
+    class="popup shadow">
+    <div class="popup-header">
+        <i class="icon icon-message-circle"></i>
+        <p class="flex-grow-1">Support</p>
+        <button class="popup-close"
+            @click="setPopup(false)">
+            Close
+            <i class="icon icon-x"></i>
+        </button>
+    </div>
+    <section class="popup-bubbles">
+        <small class="text-center text-secondary">
+            You are contacting with the customer support.
+            Limited to two messages until the customer support replies. <br><br>
+            Connected to server {{ constants.SERVER }}
+        </small><br>
+        
+        <div class="bubble-container"
+            :class="{ 'from-customer': m.from_customer }"
+            v-for="m in messages">
+            <div class="bubble">
+                <p class="bubble-date">{{ formatDate(m.sent_at) }}</p>
+                <p class="bubble-text">{{ m.content }}</p>
+            </div>
+        </div>
+        
+        <small class="text-center text-secondary"
+            v-if="contact.is_muted">
+            You are muted until {{ formatDate(contact.mute_until) }}
+        </small>
+        <small class="text-center text-secondary"
+            v-if="ui.contact_alert">
+            {{ ui.contact_alert }}
+        </small>
+    </section>
+    <div class="popup-post">
+        <input type="text" placeholder="Message"
+            v-model="fields.contact">
+        <i class="icon"
+            :class="{ 'icon-send': !ui.sending, 'icon-loader-2': ui.sending }"
+            @click="sendContactMessage()"></i>
+    </div>
+</ContactPopup>
+
+<SearchResults model props="results, ui"
+    class="results-container">
+    <div class="results shadow-sm">
+        <p class="text-center text-secondary m-0"
+            v-if="ui.no_result">No article found</p>
+            
+        <a class="result"
+            v-for="r in results"
+            :href="r.url">
+            <i class="icon icon-search"></i>
+            <div>
+                <p class="result-title">{{ r.title }}</p>
+                <p class="result-subtitle">{{ r.subtitle }}</p>
+            </div>
+        </a>
+    </div>
+</SearchResults>
+
+<main>
+    <section class="main">
+        <Navbar
+            :overview
+            :namespace
+            v-if="ui.screen > 0 && namespace"></Navbar>
+        <div class="navbar-offset"
+            v-if="ui.screen > 0 && namespace"></div>
+        
+        <section class="d-flex justify-content-center"
+            v-if="ui.screen == 0">
+            <div class="spinner spinner-border my-5"></div>
+        </section>
+        <PageLayout
+            :overview
+            :topic
+            :namespace
+            :results="search_results"
+            v-if="ui.screen == 1 && namespace"></PageLayout>
+        <DefaultLayout
+            v-else-if="ui.screen == 1"></DefaultLayout>
+        <ArticleLayout
+            :article
+            :topic
+            v-if="ui.screen == 2"></ArticleLayout>
+        
+        <ContactPopup
+            :messages="contact.messages"
+            :contact
+            v-if="ui.popup"></ContactPopup>
+    </section>
+    
+    <div class="footer"
+        v-if="ui.screen > 0 && namespace">
+        <p class="subtitle">Gitpress</p>
+        
+        <p class="footer-heading">Available Press</p>
+        <a class="footer-link"
+            :href="createLink(ns.namespace)"
+            v-for="ns in constants.NAMESPACES">{{ ns.name }}</a>
+        
+        <div v-for="ns in constants.NAMESPACES">
+            <p class="footer-heading"
+                v-if="ns.links">{{ ns.name }} Links</p>
+            <a class="footer-link"
+                :href="link.url"
+                v-for="link in ns.links"
+                v-if="ns.links">{{ link.name }}</a>
+        </div>
+        <br><br>
+        
+        <p class="text-center text-secondary">&copy; delv 2026. All rights reserved.</p>
+    </div>
+</main>
+</body>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="vendor/indexed.js"></script>
+<script src="vendor/jquery.min.js"></script>
+<script src="vendor/clientjs.min.js"></script>
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/vue.global.min.js"></script>
+<script src="vendor/saiko.js"></script>
+<script src="gitpress.js" defer></script>
+<script src="core.js" defer></script>
+<script src="index.js" defer></script>
+</html>

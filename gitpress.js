@@ -1,0 +1,30 @@
+const USER = "delvdeepr";
+const REPO = "gitpress";
+const NTFY_TOPIC = "gitpressv1_35d7927b";
+const DEF_FILE = "gitpress.json";
+
+const NAMESPACES = [{
+    "icon": "mail",
+    "name": "Nookwall",
+    "namespace": "nookwall",
+    "links": [{
+        "name": "Official Website",
+        "url": "https://nookwall.delvdeepr.me"
+    }, {
+        "name": "Terms of Use",
+        "url": "/nookwall/terms"
+    }, {
+        "name": "Privacy Policy",
+        "url": "/nookwall/privacy"
+    }, {
+        "name": "Community Guidelines",
+        "url": "/nookwall?topic=community_guidelines"
+    }]
+}];
+
+const NAMESPACE_TYPES = {
+    "HELP_CENTER": {
+        "icon": "life-buoy",
+        "suffix": "Help Center"
+    }
+}
