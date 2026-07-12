@@ -1,11 +1,9 @@
 {
-    "redirects": [{
+    "rewrites": [{
         "source": "/p/:namespace",
-        "destination": "/?namespace=:namespace",
-        "permanent": false
+        "destination": "/?namespace=:namespace"
     }, {
         "source": "/p/:namespace/:article",
-        "destination": "/?namespace=:namespace&article=:article",
-        "permanent": false
+        "destination": "/?namespace=:namespace&article=:article"
     }]
 }
