@@ -121,10 +121,10 @@ async function hotstart() {
         const overview = await read();
         core.overview = JSON.parse(overview);
         if(article) {
-            const article = await fetchPage(article);
-            article.tags = article.tags.split(",").map(t => t.trim()) ?? [];
-            core.article = article;
-            core.topic = core.overview.topics.find(t => t.id == article.topic);
+            const a = await fetchPage(article);
+            a.tags = a.tags.split(",").map(t => t.trim()) ?? [];
+            core.article = a;
+            core.topic = core.overview.topics.find(t => t.id == a.topic);
         }
     }
 }
