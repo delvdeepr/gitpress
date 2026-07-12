@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     vm.topic = core.topic;
     
     // DEVELOPMENT
-    vm.overview.type = "HELP_CENTER";
+    // vm.overview.type = "HELP_CENTER";
+    
     vm.contact = await getContactBubbles();
     vm.ui.screen = core.topic?.id ? 2 : 1;
     
