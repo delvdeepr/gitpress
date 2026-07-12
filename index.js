@@ -158,17 +158,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         namespace: null
     });
     
-    await core.hotstart();
-    vm.overview = core.overview ?? {};
-    vm.namespace = core.overview?.namespace;
-    vm.article = core.article;
-    vm.topic = core.topic;
-    
-    // DEVELOPMENT
-    // vm.overview.type = "HELP_CENTER";
-    
-    vm.contact = await getContactBubbles();
-    vm.ui.screen = core.topic?.id ? 2 : 1;
+    try {
+        await core.hotstart();
+        vm.overview = core.overview ?? {};
+        vm.namespace = core.overview?.namespace;
+        vm.article = core.article;
+        vm.topic = core.topic;
+        
+        // DEVELOPMENT
+        // vm.overview.type = "HELP_CENTER";
+        
+        vm.contact = await getContactBubbles();
+        vm.ui.screen = core.topic?.id ? 2 : 1;
+    } catch(err) {
+        console.error(err);
+        vm.ui.screen = -1;
+    }
     
     if(core.payloads.namespace
         && !core.payloads.article
