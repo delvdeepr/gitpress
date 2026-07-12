@@ -121,16 +121,14 @@ async function hotstart() {
     // payloads.topic = "account_and_identity";
     
     if(payloads.namespace) {
-         try {
-            const overview = await read();
-            core.overview = JSON.parse(overview);
-            if(payloads.article) {
-                const article = await fetchPage(payloads.article);
-                article.tags = article.tags.split(",").map(t => t.trim()) ?? [];
-                core.article = article;
-                core.topic = core.overview.topics.find(t => t.id == article.topic);
-            }
-        } catch(_) { throw new Error("Not found") } 
+        const overview = await read();
+        core.overview = JSON.parse(overview);
+        if(payloads.article) {
+            const article = await fetchPage(payloads.article);
+            article.tags = article.tags.split(",").map(t => t.trim()) ?? [];
+            core.article = article;
+            core.topic = core.overview.topics.find(t => t.id == article.topic);
+        }
     }
     
     await idx.delete("payloads");
