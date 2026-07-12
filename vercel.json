@@ -1,9 +1,9 @@
 {
     "rewrites": [{
-        "src": "/p/:namespace",
-        "dest": "/?namespace=:namespace"
+        "source": "/p/:namespace",
+        "destination": "/?namespace=:namespace"
     }, {
-        "src": "/p/:namespace/:article",
-        "dest": "/?namespace=:namespace&article=:article"
+        "source": "/p/:namespace/:article",
+        "destination": "/?namespace=:namespace&article=:article"
     }]
 }
