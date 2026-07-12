@@ -20,14 +20,6 @@ const NAMESPACES = [{
         "name": "Community Guidelines",
         "url": "/p/nookwall?topic=community_guidelines"
     }]
-}, {
-    "icon": "rocket",
-    "name": "Foobar",
-    "namespace": "foobar",
-    "links": [{
-        "name": "Example",
-        "url": "https://example.com"
-    }]
 }];
 
 const NAMESPACE_TYPES = {
