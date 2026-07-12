@@ -175,19 +175,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         vm.ui.screen = -1;
     }
     
-    if(core.payloads.namespace
-        && !core.payloads.article
-        && core.payloads.topic) {
-        const topic = core.overview.topics.find(t => t.id == core.payloads.topic);
-        if(topic) Saiko.$showTopicLinks(topic.id);
-    }
-    
-    if(core.payloads.namespace
-        && !core.payloads.article
-        && !core.payloads.topic
-        && core.payloads.q) {
-        vm.fields.search = core.payloads.q;
-        Saiko.$search();
+    const [p, namespace, article] = pathnames;
+    if(p == "p") {
+        if(namespace
+            && !article
+            && core.payloads.topic) {
+            const topic = core.overview.topics.find(t => t.id == core.payloads.topic);
+            if(topic) Saiko.$showTopicLinks(topic.id);
+        }
+        
+        if(namespace
+            && !article
+            && !core.payloads.topic
+            && core.payloads.q) {
+            vm.fields.search = core.payloads.q;
+            Saiko.$search();
+        }
     }
     
     // DEVELOPMENT
