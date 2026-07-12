@@ -3,7 +3,7 @@ let core = {};
 let instance, idx;
 
 const payloads = Object.fromEntries(new URLSearchParams(location.search));
-const fingerprint = new ClientJS().getFingerprint().toString(36).toUpperCase();;
+const fingerprint = new ClientJS().getFingerprint().toString(36).toUpperCase();
 
 async function read(file) {
     // Bypass caching to get the most updated content.
